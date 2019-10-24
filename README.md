@@ -10,7 +10,7 @@ Reddit currently has 330 million active users that regularly visit the site and 
 
 Right now, we have developed many communication devices, like the advancement of ancient telegraphs to the modern day handphone data messaging, and yet, it is reported that we are getting more and more lonely. This could be due to high migration patterns from rural to urban areas, where young working adults have to leave their families and move to cities for jobs, or decreasing quality of relationships. 
 
-The two subreddits I have chosen, r/relationship_advice and r/justnomil, are known advice/story subreddits that seek advice after explaining their current circumstances. R/relationships aims to help provide advice to posters seeking advice regarding day to day relationships, including familial relationships, friendships and working relationships. On the other hand, R/justnoMIL aims to provide advice and encouragement to posters sharing their current circumstances or seeking validation. 
+The two subreddits I have chosen, r/relationship_advice and r/justnomil, are known advice/story subreddits that seek advice after explaining their current circumstances. R/relationship_advice aims to help provide advice to posters seeking advice regarding day to day relationships, including familial relationships, friendships and working relationships. On the other hand, R/justnoMIL aims to provide advice and encouragement to posters sharing their current circumstances or seeking validation. 
 
 It is shown that there is merit in using a Naive Bayes model with a TF-IDF vectorizer to predicting our posts due to the decreased incorrectly classified results. This is evidence that it is possible to provide redditors a helping hand to decide where to seek advice from. 
 
