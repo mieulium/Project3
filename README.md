@@ -12,21 +12,21 @@ Right now, we have developed many communication devices, like the advancement of
 
 The two subreddits I have chosen, r/relationships and r/justnomil, are known advice/story subreddits that seek advice after explaining their current circumstances. R/relationships aims to help provide advice to posters seeking advice regarding day to day relationships, including familial relationships, friendships and working relationships. On the other hand, R/justnoMIL aims to provide advice and encouragement to posters sharing their current circumstances or seeking validation. 
 
-<results insert> 
+It is shown that there is merit in using a Naive Bayes model with a TF-IDF vectorizer to predicting our posts due to the decreased incorrectly classified results. This is evidence that it is possible to provide redditors a helping hand to decide where to seek advice from. 
 
 It is important that we are able to accurately classify posts from both subreddits as these subreddits may need urgent response from people who may have experienced a similar situation. Urgent responses might be needed especially when posters need immediate psychological care or physical help when placed in dangerous environments of abuse or danger. 
 
 Thus, it is important for posts to be accurately classified in Reddit so that we are able to direct posters to people who can help - or lead them to more qualified help. 
 
-## Problem Statement
+## Problem Statement:
+We normally consult the internet first for all our problems whether it be physical, mental or social, thus there is a need to 'triage' our problems so that immediate attention can be given. We propose a way to classify the posts more effectively so that the appropriate help can be given. 
 
 ### Methods Used
-* Data Cleaning Methods
-*  Statistical Inference
-* Imputation of Missing Data
-* Data Scaling
-* Basic Modelling techniques
-* Regularisation 
+* NLP Data Cleaning Methods (e.g. Lemmatizing, Regex)
+* Pipeline
+* GridSearch
+* Logistic Regression
+* Naive Bayes 
 * Data Visualization
 
 ### Technologies
@@ -36,53 +36,36 @@ Thus, it is important for posts to be accurately classified in Reddit so that we
 * Scikit Learn
 
 ## Project Description
-- Data was obtained from instructors and cleaned using these sources:
-- <https://www.kaggle.com/c/dsi-us-6-project-2-regression-challenge/submissions>[here]
+- Data was obtained from these sources:
+- <https://www.reddit.com/r/relationship_advice>[here] and <https://www.reddit.com/r/JUSTNOMIL>[here]
 
 ## Needs of this project
 
 - data exploration/descriptive statistics
 - data processing/cleaning
-- missing data imputation
-- statistical modeling
+- modeling
 - writeup/reporting
 
 ## Getting Started
 
 1. Please clone this repository before using it. 
-2. Datasets are kept in .csv files that are contained in [../code/]within this repo.   
-3. Data processing/transformation scripts are being kept [../code/]
+2. Datasets are kept in .csv files that are contained in [./code/]within this repo.   
+3. Data processing/transformation scripts are being kept [./code/]
 
 
-## Resulting Data Dictionary
+## Results
 
-### Final Dataframe
-|Feature|Type|Description|
-|---|---|---|
-|'overallqual'|Continuous| Overall material and finish quality|
-|'masvnrarea'|Continuous|Masonry veneer area in square feet|
-|'poolarea'|Continuous| Pool area in square feet|
-|'fireplaces'|Continuous| Number of fireplaces|
-|'grlivarea'|Continuous| Above grade (ground) living area square feet|
-|'screenporch'|Continuous| Screen porch area in square feet|
-|'lotarea'|Continuous| Lot size in square feet|
-|'3ssnporch'|Continuous| Three season porch area in square feet|
-|'bsmtfullbath'|Continuous| Basement full bathrooms|
-|'totalbsmtsf'|Continuous| Total square feet of basement area|
-|'garagearea'|Continuous| Size of garage in square feet|
-|'yearbuilt'|Continuous| Original construction date|
-|'exterqual'|Ordinal| Exterior material quality|
-|'kitchenq'|Ordinal| Kitchen quality|
-|'bsmtq'|Ordinal| Height of the basement|
-|'garagefinish_RFn'|Dummy|  Interior finish of the garage_ Rough Finished|
-|'garagefinish_Unf'|Dummy|  Interior finish of the garage_ Unfinished|
-|'masvnrtype_BrkFace'|Dummy| Masonry veneer type_Brick Face|
-|'masvnrtype_None'|Dummy| Masonry veneer type_ None|
-|'masvnrtype_Stone'|Dummy|Masonry veneer type_Stone|
-|'heatingq'|Ordinal| Heating quality and condition|
-|'paveddrive_P',|Dummy| Partial Paved Drive|
-|'paveddrive_Y',|Dummy| Paved Drive|
-|'lotshape_IR2',|Dummy| General shape of property_Moderately Irregular|
-|'lotshape_IR3',|Dummy|General shape of property_Irregular|
-|'lotshape_Reg'|Dummy|General shape of property_regular|
-# Project3
+Though all models have acceptable scores, with both models scoring consistently above 0.99, the Naive Bayes Model performed better than the logistic regression models in both score overall and in detecting less false negatives. 
+
+In addition, the overall accuracy of the Logistic Regression model seem to be less accurate. It might not be favourable to use Logistric Regression to classify posts as the nature of r/JUSTNOMIL can often require specific advice from other likeminded individuals, and the severity of r/JUSTNOMIL posts might require immediate attention. The Logistic Regression model showed that there was a higher proportion of false negatives - which means that there are more r/JUSTNOMIL posts being incorrectly classified as r/relationship_advice.
+
+Thus, the Naive Bayes model has more merit as classifier as it is able to firstly classifies less wrong posts, and secondly, it has a higher AUC score in general
+
+Furthermore, there is a slight advantage of using TF-IDF word vectorizer as the models using it contains less false positives. 
+
+## Possible Future Steps of Action
+
+It is possible to explore the following courses of action:
+- introducing regularisation to the logistic regression model
+- try decision trees instead
+- develop tool further to decide on danger level of poster. 
