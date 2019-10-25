@@ -55,13 +55,20 @@ We normally consult the internet first for all our problems whether it be physic
 
 ## Results
 
-Though all models have acceptable scores, with both models scoring consistently above 0.99, the Naive Bayes Model performed better than the logistic regression models in both score overall and in detecting less false negatives. 
+|Vectoriser/Model|    AUC Score|    Accuracy|    TP|    TN|    FP|    FN|
+|---|---|---|---|---|---|---|
+|CountVectorizer + Logistic Regression|    0.914829|    0.914807|    226|    225|    20|    22|
+| TF-IDFVectorizer + Logistic Regression|    0.955300|    0.955375|    240|    231|    14|    8|
+|CountVectorizer + Naive Bayes|    0.953160|    0.953347|    244|    226|    19|    4|
+|TF-IDFVectorizer + Naive Bayes|    0.957266|    0.957404|    243|    229|    16|    
+
+Though all models have acceptable scores, with both models scoring consistently above 0.90, the Naive Bayes Model performed better than the logistic regression models in both score overall and in detecting less false negatives. 
 
 In addition, the overall accuracy of the Logistic Regression model seem to be less accurate. It might not be favourable to use Logistric Regression to classify posts as the nature of r/JUSTNOMIL can often require specific advice from other likeminded individuals, and the severity of r/JUSTNOMIL posts might require immediate attention. The Logistic Regression model showed that there was a higher proportion of false negatives - which means that there are more r/JUSTNOMIL posts being incorrectly classified as r/relationship_advice.
 
-Thus, the Naive Bayes model has more merit as classifier as it is able to firstly classifies less wrong posts, and secondly, it has a higher AUC score in general
+Thus, the Naive Bayes model has more merit as classifier as it is able to firstly classifies less wrong posts, and secondly, it has a higher AUC score in general.
 
-Furthermore, there is a slight advantage of using TF-IDF word vectorizer as the models using it contains less false positives. 
+Furthermore, models using TF-IDF word vectorizer seem to perform better at accuracy and have lower false positives and false negatives. This is most probably due to TF-IDF Vectorizer penalising more common words.
 
 ## Possible Future Steps of Action
 
